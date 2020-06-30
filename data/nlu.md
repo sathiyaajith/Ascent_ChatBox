@@ -7,7 +7,7 @@
 - hey there
 
 ## intent:give_trainingID
-- my training ID is [BA001](trainid) 
+- my training ID is [BA001](trainid)
 - [MW001](trainid)
 - Training ID is[RW001](trainid)
 - Here is my training id [RW001](trainid)
@@ -18,22 +18,22 @@
 - this is my training id [MW006](trainid)
 - let me give my training id [RW005](trainid)
 
-## regex: trainid
-- \b\[a-zA-Z]{2}\d{3}\b
-
 ## intent:acronyms
-- [MEPS](useracro:MEPS)
+- [MEPS](useracro)
 - [CIA](useracro)
 - [DEERS](useracro)
-- [MOD](useracro:MOD)
+- [MOD](useracro)
 - [FAST](useracro)
-- [AAFES](useracro:AAFES)
+- [AAFES](useracro)
 - [CID] (useracro:CID)
 - [TAM](useracro)
-- [AAAV](useracro:AAAV)
+- [AAAV](useracro)
 - [AEF](useracro)
 - [CFE](useracro)
-- [ELB](useracro:ELB)
+- [ELB](useracro)
+- [acronyms](acrodetails)
+- [Acronyms](acrodetails)
+- [ACRONYMS](acrodetails)
 
 ## intent:confirm
 - yes
@@ -47,13 +47,13 @@
 - sure
 - perfect
 
-## intent:deny  
+## intent:deny
 - no
 - never
 - I don't think so
 - don't like that
 - no way
-- not really 
+- not really
 
 ## intent:goodbye
 - bye
@@ -61,16 +61,10 @@
 - see you around
 - see you later
 
-
 ## intent:vacancy_details
 - [vacancy](vaccde)
 - [Vacancy](vaccde)
 - [VACANCY](vaccde)
-
-## intent:acronyms
-- [acronyms](acrodetails)
-- [Acronyms](acrodetails)
-- [ACRONYMS](acrodetails)
 
 ## intent:leave_types
 - [Leave](leaves)
@@ -93,7 +87,6 @@
 - [humanresource](human)
 - [Humanresource](human)
 - [Human resource](human)
-- [Human resource](human)
 
 ## intent:general_flow
 - [general](gen)
@@ -104,8 +97,6 @@
 - [financeandcontract](fin)
 - [Financeandcontract](fin)
 - [FinanceandContract](fin)
-- [FinanceandContract](fin)
-
 
 ## intent:training
 - [training](traindetails)
@@ -127,7 +118,7 @@
 - [fixedwing](fixed)
 - [Fixedwing](fixed)
 - [Fixed wing](fixed)
-- [fixed wing](fixed) 
+- [fixed wing](fixed)
 
 ## intent:rotatory_type
 - [Rotatory Wing](rotatory)
@@ -140,7 +131,6 @@
 - [rafcarnwell](rafcar)
 - [Rafcarnwell](rafcar)
 - [raf carnwell](rafcar)
-- [Raf Carnwell](rafcar)
 - [Raf Carnwell](rafcar)
 
 ## intent:rafvalley_details
@@ -197,10 +187,11 @@
 - [exit](end)
 - [EXIT](end)
 
-
-
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+
+## regex: trainid
+- \b\[a-zA-Z]{2}\d{3}\b
