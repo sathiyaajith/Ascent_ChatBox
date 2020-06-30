@@ -1,0 +1,328 @@
+intents:
+    - greet
+    - give_trainingID
+    - goodbye
+    - confirm
+    - deny
+    - bot_challenge
+    - vacancy_details
+    - acronyms
+    - meps_testing
+    - meps_physical
+    - fixed_type
+    - training
+    - rotatory_type
+    - rafcarnwell_details
+    - rafvalley_details
+    - phenom_flight
+    - grob_flight
+    - hawk_flight
+    - bee_flight
+    - chraft_flight
+    - juno_copter
+    - rafshawbury_details
+    - end_flow
+    - end_end
+    - train_center
+    - human_resource
+    - general_flow
+    - finance_flow
+    - leave_types
+    - leave_information
+entities:
+- trainid
+- useracro
+- fixed
+- rotatory
+- rafcar
+- rafval
+- traindetails
+- pheno
+- gro
+- haw
+- be
+- chra
+- jun
+- rafsha
+- end
+- home
+- traincen
+- human
+- gen
+- fin
+- leaves
+- acrodetails
+- vaccde
+- leavecat
+actions:
+- utter_greet
+- action_get_details
+- utter_confirm
+- action_check_vacancy
+- utter_ask_useracro
+- action_MEPS_details
+- utter_testing
+- utter_physical
+- utter_goodbye
+- utter_iamabot
+- action_train_type
+- utter_ask_train
+- utter_ask_location
+- utter_cranwell_types
+- action_flight_location
+- action_cranwell_type
+- utter_valley_types
+- action_valley_type
+- utter_hawk_flights
+- utter_bee_flights
+- utter_chraft_flights
+- utter_rotate_location
+- action_shawbury_type
+- utter_phenom_flights
+- utter_grob_flights
+- utter_juno_copter
+- action_enter_vacancy
+- utter_enter_vacancy
+- utter_end_flow
+- utter_ask_leave
+- action_leave_type
+- action_vaccleave_type
+- utter_confirm_vacc
+- action_general_type
+- utter_confirm_acro
+- utter_confirm_train
+- action_train_details
+forms:
+- form_info
+
+slots:
+  trainid:
+    type: text
+  useracro:
+    type: text
+  required_slots:
+    type: text
+  meps_testing:
+    type: text
+  meps_physical:
+    type: text  
+  testing_desc:
+    type: text
+  testing_desc_add:
+    type: text
+  physical_desc:
+    type: text
+  physical_desc_add:
+    type: text
+  traindetails:
+    type: unfeaturized  
+  vaccde:  
+    type: unfeaturized 
+  fixed:
+    type: unfeaturized 
+  rotatory:
+    type: unfeaturized
+  rafcar:
+    type: unfeaturized
+  rafval:
+    type: unfeaturized
+  acrodetails:
+    type: unfeaturized  
+  rafsha:
+    type: unfeaturized  
+  pheno:
+    type: unfeaturized
+  gro:
+    type: unfeaturized
+  jun:
+    type: unfeaturized   
+  haw:
+    type: unfeaturized   
+  leaves:
+    type: unfeaturized   
+  be:
+    type: unfeaturized
+  chra:
+    type: unfeaturized
+  end:
+    type: unfeaturized  
+  leavecat:  
+    type: unfeaturized 
+  home:
+    type: unfeaturized   
+  traincen:
+    type: unfeaturized 
+  human:
+    type: unfeaturized 
+  gen:
+    type: unfeaturized 
+  fin:
+    type: unfeaturized   
+  requested_slots:
+    type: unfeaturized  
+templates:
+  utter_greet:
+  - text: "Hey! I am Acrobot.Before proceeding further please enter your Training ID"    
+  utter_confirm:
+  - text: "What would you like to know about?"
+    buttons:
+    - title: "Human Resources"
+      payload: "humanresource"
+    - title: "General"
+      payload: "general"
+    - title: " Training Centers"
+      payload: "trainingcenters"  
+    - title: "Finance and Contract"
+      payload: "financeandcontract"  
+  utter_confirm_vacc:
+  - text: "Proceed with:"
+    buttons:
+    - title: "Vacancy"
+      payload: "vacancy"
+    - title: "Leave"
+      payload: "leave"
+  utter_confirm_acro:
+  - text: "Click here to know more on:"
+    buttons:
+    - title: "Acronyms"
+      payload: "acronyms"
+  utter_confirm_train:
+  - text: "Click on Training to get more information:"
+    buttons:
+    - title: "Training"
+      payload: "training"    
+  utter_ask_leave:
+  - text: "Types of leave:"
+    buttons:
+    - title: "Casual Leave"
+      payload: "casualleave"
+    - title: "Sick Leave"
+      payload: "sickleave"
+    - title: "Annual Leave"
+      payload: "annualleave"  
+    - title: "Maternity Leave"
+      payload: "maternityleave"  
+  utter_enter_vacancy:
+  - text: "Please find more vacancy details in the given below link: https://ascentflighttraining.com/vacancies/ "
+  utter_ask_useracro:
+  - text: "Enter the Acronym that you want know about:"
+  utter_testing:
+  - text: "{testing_desc} {testing_desc_add}"
+  utter_physical:
+  - text: "{physical_desc} {physical_desc_add}"
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_ask_train:
+  - text: "Do you want to know about the training modules?"
+    buttons:
+    - title: "Fixed Wing"
+      payload: "fixedwing"
+    - title: "Rotatory Wing"
+      payload: "rotatorywing"
+  utter_ask_location:
+  - text: "Training Locations are:"
+    buttons:
+    - title: "RAF Cranwell"
+      payload: "rafcarnwell"
+    - title: "RAF Valley"
+      payload: "rafvalley"
+  utter_cranwell_types:
+  - text: "Flights for training at RAF Cranwell are:"
+    buttons:
+    - title: "Phenom 100"
+      payload: "phenom"
+    - title: "Grob Perfect T1"
+      payload: "grob"
+  utter_phenom_flights:
+  - text: "Phenom 100 specifications: \n
+    Features: \n
+    1. Crew - 1 \n
+    2. Capacity - 5-7 passengers / 755 kg (1,664 lb) payload \n
+    3. Length 12.82 m (42 ft 1 in) \n
+    4. Wingspan - 12.3 m (40 ft 4 in) \n
+    5. Height - 4.35 m (14 ft 3 in) \n
+    6. Empty weight - 3,275 kg (7,220 lb)\n
+    7. Max takeoff weight - 4,800 kg (10,582 lb) \n
+    8. Fuel capacity - 1,272 kg (2,804 lb) \n
+    9. Cabin height 1.5 m (4 ft 11 in) \n
+    10. Cabin length - 3.35 m (11 ft) \n
+    11. Powerplant 2 × Pratt & Whitney Canada PW617F1-E turbofan engines, 7.7 kN (1,730 lbf) thrust each at ISA + 8°C1. "
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Embraer_EMB-500_Phenom_100_AN1695056.jpg/800px-Embraer_EMB-500_Phenom_100_AN1695056.jpg"
+  utter_grob_flights:
+  - text: "Grob specifications: \n
+    Features: \n
+    1. Crew - one \n
+    2. Capacity - one passenger \n
+    3. Length - 8.4 m (27 ft 7 in) \n
+    4. Wingspan - 10.3 m (33 ft 10 in) \n
+    5. Height - 2.7 m (8 ft 10 in) \n
+    6. Wing area - 13.5 m2 (145 sq ft) \n
+    7. Empty weight - 1,095 kg (2,414 lb) \n
+    8. Max takeoff weight - 1,590 kg (3,505 lb) \n
+    9. Fuel capacity - 360 litres (79 imp gal; 95 US gal) \n
+    10. Powerplant - 1 × Rolls-Royce M250-B17F Turboprop aircraft engine, 340 kW (456 hp) \n
+    11. Propellers - 5-bladed MT Propeller, 2.1 m (6 ft 11 in) diameter"
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/G120TP_-_Air-to-Air_%28cropped%29.jpg/300px-G120TP_-_Air-to-Air_%28cropped%29.jpg"
+  utter_valley_types:
+  - text: "Flights for training at RAF Valley are:"
+    buttons:
+    - title: "Hawk T1"
+      payload: "hawk"
+    - title: "Bee Hawk T2"
+      payload: "bee"
+    - title: "Bee Chraft Texron T1"
+      payload: "chraft"
+  utter_hawk_flights:
+  - text: "Hawk T1 specifications: \n
+    Features: \n
+    1. Crew - 2 \n
+    2. Height - 3.99m \n
+    3. Length - 11.96m \n
+    4. Weight_empty - 3647kg"
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Hawk_-_RIAT_2011_%286122004254%29.jpg"
+  utter_bee_flights:
+  - text: "Bee Hawk T2 specifications: \n
+    Features: \n
+    Powerplant - one 6,500lb st (28.91kN) Rolls-Royce/Turbomeca Adour Mk 951 turbofan.\n
+    Length - 40ft 9in (12.43m)\n
+    Height - 13ft 1in (3.98m)\n
+    Wingspan - 32ft 7in (9.94m)\n
+    Wing area - 179.64sqft (16.70m2)\n
+    Maximum take-off weight - 20,000lb (9,100kg)"
+    image: "https://www.aerospacetestinginternational.com/wp-content/uploads/2018/10/702pxHawkT2-ZK020.jpg"
+  utter_chraft_flights:
+  - text: "Bee Chraft Textron T1 specifications: \n
+    Features: \n
+    Max. Speed - 518 mph \n
+    Range - 2762 miles \n
+    Payload - 3000 \n"
+    image: "https://www.directorstalkinterviews.com/wp-content/uploads/2020/02/Bell-Boeing-V-22-Osprey-620x330.jpg"
+  utter_rotate_location:
+  - text: "Training Location is:"
+    buttons:
+    - title: "RAF Shawbury"
+      payload: "rafshawbury"
+  utter_juno_copter:
+  - text: "Hawk T1 specifications: \n
+    Features: \n
+    1. Powerplant two Safran Helicopter Engines Arrius 2B2plus turboshafts \n
+    2. Length overall 39ft 8½in (12.10m) \n
+    3. Height 12ft 3½in (3.75m) \n
+    4. Maximum take-off weight 6,570lb (2,980kg) \n
+    5. Maximum speed 140kt (278km/h) \n
+    6. Maximum range 329nm (609km) \n
+    7. Hovering ceiling in ground effect 12,700ft"
+    image: "https://www.raf.mod.uk/sites/raf-beta/cache/file/BF344D94-FD66-4EFF-B78850783D2C8514_600x300.jpg"
+  utter_end_flow:
+  - text: "Would like to continue?"
+    buttons:
+    - title: "Main Menu"
+      payload: "mainmenu"
+    - title: "Exit"
+      payload: "exit"
+  
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

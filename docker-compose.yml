@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  nginx:
+    build:
+       context: .
+       dockerfile: dockerfile_nginx
+    ports:
+      - '8000:80'
+    
+ 
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile_rasa
+    ports:
+      - 5005:5005
+      
+  actions:
+    build:
+      context: .
+      dockerfile: dockerfile_actions
+    ports:
+      - 5055:5055   

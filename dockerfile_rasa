@@ -1,0 +1,15 @@
+FROM rasa/rasa:1.6.0-full 
+
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+
+RUN  rasa train
+
+VOLUME /app
+VOLUME /app/data
+VOLUME /app/models
+
+CMD [ "run","-m","/app/models","--enable-api","--cors","*","--debug" ]
+
+EXPOSE 5002

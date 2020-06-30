@@ -1,0 +1,2 @@
+pip install rasa==1.6.0
+pip install tensorflow==2.0

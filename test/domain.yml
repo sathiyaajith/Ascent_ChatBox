@@ -1,0 +1,43 @@
+intents:
+- greet
+- give_trainingID
+- goodbye
+- confirm
+- deny
+- bot_challenge
+- vacancy
+
+
+entities:
+- batchno
+
+actions:
+- utter_greet
+- action_get_details
+- utter_confirm
+- action_check_vacancy
+- utter_goodbye
+- utter_iamabot
+
+slots:
+  trainid:
+    type: text
+    
+
+templates:
+  utter_greet:
+  - text: "Hey! I am Acrobot. I will help you on inter and intra department information. Before proceeding further please enter your Training ID"
+          
+  utter_confirm:
+  - text: "What would you like to know about? Vacancy or Acronyms?"
+       
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

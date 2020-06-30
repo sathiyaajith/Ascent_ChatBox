@@ -1,0 +1,17 @@
+FROM rasa/rasa:1.6.0-full 
+
+RUN mkdir /app
+WORKDIR /app
+COPY . .
+
+RUN  rasa train
+
+VOLUME /app
+VOLUME /app/data
+VOLUME /app/models
+
+
+
+CMD ["rasa", "run","actions"]
+
+EXPOSE 5055
